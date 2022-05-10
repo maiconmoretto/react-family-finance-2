@@ -43,7 +43,6 @@ removeItem = index => {
       items: items.filter((item, posAtual) => {
      
         if (posAtual === index) {
-          console.log("AQUIIIIIIIIIIIIIii" , item)
           // Simple DELETE request with fetch
           fetch('http://localhost:8084/expense/' + item.id, { method: 'DELETE' })
             .then(() => this.setState({ status: 'Delete successful' }));
