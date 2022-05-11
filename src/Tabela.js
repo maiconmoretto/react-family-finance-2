@@ -14,9 +14,8 @@ const TableHead = () => {
 }
 
 const TableBody = props => {
-    console.log(props);
 
-    if (props.DataisLoaded == false) {
+    if (props.DataisLoaded === false) {
         return (
             <tbody>
                 <tr>
@@ -33,7 +32,7 @@ const TableBody = props => {
                     <td>{linha.description}</td>
                     <td>R$ {linha.amount}</td>
                     <td>{linha.category}</td>
-                    <td><button onClick={() => { props.removeItem(index) }}>Remover</button></td>
+                    <td><button className="waves-effect waves-light btn blue lighten-1" onClick={() => { props.removeItem(index) }}>Remover</button></td>
                 </tr>
             );
         });
@@ -52,10 +51,8 @@ class Tabela extends Component {
     render() {
 
         const { items, removeItem, DataisLoaded } = this.props;
-        console.log(items);
-
         return (
-            <table>
+            <table className="centered highlight">
                 <TableHead />
                 <TableBody items={items} removeItem={removeItem} DataisLoaded={DataisLoaded} />
             </table>
